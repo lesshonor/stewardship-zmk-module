@@ -1,0 +1,11 @@
+file_format: "1"
+id: van
+name: van
+type: board
+arch: arm
+features:
+  - keys
+outputs:
+  - usb
+  - ble
+url: https://nicekeyboards.com/nice-60
