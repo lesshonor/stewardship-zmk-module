@@ -1,0 +1,10 @@
+if SHIELD_BEATERVAN
+
+config ZMK_KEYBOARD_NAME
+    default "Beatervan"
+
+config ZMK_SLEEP
+    default y
+    depends on SOC_FAMILY_NRF52 #TODO: Keep an eye on this, suspect ZMK proper will institute better guarding when people actually start trying RP2040s
+
+endif
