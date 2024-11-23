@@ -1,5 +1,5 @@
-identifier: van
-name: van
+identifier: scallop
+name: scallop
 type: mcu
 arch: arm
 toolchain:
