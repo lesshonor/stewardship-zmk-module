@@ -6,10 +6,11 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
+#include "beatervan-layouts.dtsi"
+
 / {
     chosen {
         zmk,kscan = &kscan;
-        zmk,matrix-transform = &arrows_southpaw_transform;
     };
 
     kscan: kscan {
