@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) 2021 Yonatan Schachter
+ * Copyright (c) 2024 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ */
+
+#include <zephyr/dt-bindings/pinctrl/rpi-pico-rp2040-pinctrl.h>
+
+&pinctrl {
+    pio0_spi0_default: pio0_spi0_default {
+        group1 {
+            pinmux = <PIO0_P9>;
+        };
+    };
+};

@@ -1,0 +1,18 @@
+identifier: qaz_rp2040
+name: QAZ-RP2040
+type: mcu
+arch: arm
+flash: 16384
+ram: 264
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - gpio
+  - spi
+  - hwinfo
+  - watchdog
+  - flash
+  - dma
+  - counter
