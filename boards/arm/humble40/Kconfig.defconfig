@@ -1,0 +1,38 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_HUMBLE40
+
+config ZMK_KEYBOARD_NAME
+    default "humble40"
+
+config BOARD
+    default "humble40"
+
+config RP2_FLASH_W25Q080
+    default y
+
+if I2C_DW
+
+config I2C_DW_CLOCK_SPEED
+    default 125
+
+endif
+
+config USB_SELF_POWERED
+    default n
+
+config ZMK_BACKLIGHT
+    default y
+
+if ZMK_BACKLIGHT
+
+config PWM
+    default y
+
+config LED
+    default y
+
+endif
+
+endif

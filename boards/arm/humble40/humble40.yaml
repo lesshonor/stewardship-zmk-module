@@ -1,0 +1,18 @@
+identifier: humble40
+name: humble40
+type: mcu
+arch: arm
+flash: 16384
+ram: 264
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - gpio
+  - hwinfo
+  - watchdog
+  - pwm
+  - flash
+  - dma
+  - counter

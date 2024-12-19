@@ -1,0 +1,59 @@
+/*
+* Copyright (c) 2024 The ZMK Contributors
+*
+* SPDX-License-Identifier: MIT
+*/
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        cmd_studio {
+            bindings = <&studio_unlock>;
+            key-positions = <0 24 11 35>;
+        };
+
+        cmd_boot {
+            bindings = <&bootloader>;
+            key-positions = <0 11 43 36>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Base";
+            bindings = <
+&kp ESC    &kp Q  &kp W     &kp E     &kp R  &kp T        &kp Y        &kp U  &kp I      &kp O     &kp P           &kp BSPC
+&kp TAB    &kp A  &kp S     &kp D     &kp F  &kp G        &kp H        &kp J  &kp K      &kp L     &kp SEMI        &kp ENTER
+&kp LSHFT  &kp Z  &kp X     &kp C     &kp V  &kp B        &kp N        &kp M  &kp COMMA  &kp DOT   &mt RSHFT FSLH  &kp RSHFT
+&kp LCTRL         &kp LGUI  &kp LALT         &lt 1 SPACE  &lt 1 SPACE         &kp RGUI   &kp RALT                  &mo 2
+            >;
+        };
+
+        symbol_layer {
+            display-name = "Symbols";
+            bindings = <
+&trans    &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp DEL
+&kp CAPS  &kp GRAVE  &kp LBRC  &kp RBRC  &kp MINUS  &trans  &trans  &kp EQUAL  &kp BSLH  &kp SEMI  &trans  &kp SQT
+&trans    &trans     &trans    &trans    &trans     &trans  &trans  &trans     &trans    &trans    &trans  &trans
+&trans               &trans    &trans               &trans  &trans             &trans    &trans            &trans
+            >;
+        };
+
+        nav_layer {
+            display-name = "Nav/Brightness";
+            bindings = <
+&bootloader  &trans      &kp UP      &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans       &kp LEFT    &kp DOWN    &kp RIGHT   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans       &bl BL_TOG  &bl BL_DEC  &bl BL_INC  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans                   &trans      &trans              &trans  &trans          &trans  &trans          &trans
+            >;
+        };
+    };
+};
