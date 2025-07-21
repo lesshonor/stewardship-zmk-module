@@ -1,0 +1,41 @@
+/*
+ * Copyright (c) 2025 The ZMK Contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 11)>,
+                <NRF_PSEL(SPIM_MISO, 0, 11)> /* There are no return comms, so this is fine. */
+                ;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 11)>,
+                <NRF_PSEL(SPIM_MISO, 0, 11)>
+                ;
+            low-power-enable;
+        };
+    };
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 17)>
+                ;
+        };
+    };
+
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 17)>
+                ;
+            low-power-enable;
+        };
+    };
+};
