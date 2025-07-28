@@ -1,0 +1,91 @@
+/*
+* Copyright (c) 2025 The ZMK Contributors
+*
+* SPDX-License-Identifier: MIT
+*/
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+
+    behaviors {
+        lt2_ralt: lt2_ralt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RALT>, <&mo 2>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_boot {
+            key-positions = <0 10>;
+            bindings = <&bootloader>;
+        };
+
+        combo_unlock {
+            key-positions = <0 12>;
+            bindings = <&studio_unlock>;
+        };
+
+        combo_qaz {
+            key-positions = <11 22 33>;
+            bindings = <&hard_pass>;
+        };
+    };
+
+    /* Pull quote is here for posterity, and in hopes it can be susbstituted in after some ZMK macro enhancements. I WANT TO BELIEVE */
+/*
+How would you even type a "?" with that keyboard. No, I would not use a keyboard that was missing all numbers, 90% of symbols and threw 3 keys haphazardly to the side.
+
+This is a joke at best and mostly just a waste. Just because you can doesn't mean you should. It's junk like this that makes the alternate keyboard community look like a bunch of schizos. "Why would I use something that works when I can remove tons of functionality to be cutesy?".
+
+Hard pass.
+*/
+
+    macros {
+        hard_pass: hard_pass {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(H) &kp A &kp R &kp D &kp SPACE &kp P &kp A &kp S &kp S &kp DOT &kp RET>
+            ;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        hard_pass_layer {
+            display-name = "Hard Pass.";
+            bindings = <
+&kp ESC    &kp W     &kp E  &kp R        &kp T  &kp Y      &kp U  &kp I      &kp O       &kp P      &kp BSPC    &kp Q
+&kp TAB    &kp S     &kp D  &kp F        &kp G  &kp H      &kp J  &kp K      &kp L       &kp ENTER              &kp A
+&kp LSHFT  &kp X     &kp C  &kp V        &kp B  &kp N      &kp M  &kp COMMA  &kp DOT     &kp FSLH               &kp Z
+           &kp LGUI  &none  &lt 1 SPACE         &kp SPACE         &none      &lt2_ralt
+            >;
+        };
+
+        numbers_layer {
+            display-name = "numbers aren't real";
+            bindings = <
+&none  &none  &none  &none   &none  &none  &none  &none  &none  &none  &none    &none
+&none  &none  &none  &none   &none  &none  &none  &none  &none  &none           &none
+&none  &none  &none  &none   &none  &none  &none  &none  &none  &none           &none
+       &none  &none  &trans         &none         &none  &none
+            >;
+        };
+
+        question_mark_layer {
+            display-name = "how to type '?'";
+            bindings = <
+&kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)    &kp LS(FSLH)
+&kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)                  &kp LS(FSLH)
+&kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)                  &kp LS(FSLH)
+              &kp LS(FSLH)  &kp LS(FSLH)  &kp LS(FSLH)                &kp LS(FSLH)                &kp LS(FSLH)  &trans
+            >;
+        };
+    };
+};

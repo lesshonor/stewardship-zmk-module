@@ -1,0 +1,12 @@
+# Copyright (c) 2025 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if BOARD_QAZIMODO
+
+config BOARD
+    default "qazimodo"
+
+config ZMK_KEYBOARD_NAME
+    default "Qazimodo"
+
+endif # BOARD_QAZIMODO

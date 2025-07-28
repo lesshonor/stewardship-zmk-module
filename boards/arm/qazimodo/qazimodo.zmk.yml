@@ -1,0 +1,11 @@
+file_format: "1"
+id: qazimodo
+name: Qazimodo
+description: "A cute and playful experiment which has nevertheless proven itself capable of inciting self-serious redditors' incandescent rage."
+type: board
+arch: arm
+features:
+  - keys
+outputs:
+  - usb
+url: https://qazimodo.com
