@@ -1,0 +1,53 @@
+name: Deploy
+on:
+  push:
+    paths:
+      - "boards/**"
+      - .github/workflows/draw.yml
+      - deploy/keymap_drawer/config.yaml
+      - "*.zmk.yml"
+      - .github/workflows/readme.yml
+      - deploy/scripts/generate_readme.py
+
+concurrency:
+  group: docs-${{ github.ref }}
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write
+    with:
+      config_path: "deploy/keymap-drawer/config.yaml"
+      west_config_path: ""
+      destination: "artifact"
+      fail_on_error: ${{ fromJSON(true) }}
+      json_path: "assets/json"
+      keymap_patterns: "boards/**/**/*.keymap"
+      #output_folder: "assets/generated"
+
+  gen_readme:
+    runs-on: ubuntu-latest
+    needs: draw
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout changes
+        uses: actions/checkout@v4
+      #- name: Obtain modified file list
+      - name: Generate README text
+        run: |
+          python deploy/scripts/generate_readme.py
+      - name: Grab drawings
+        uses: actions/download-artifact@v4
+        with:
+          name: drawings
+          path: assets/generated
+      - name: Commit changes
+        run: |
+          # lmao
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*/README.md' 'assets/generated/*.svg'
+          git commit -m 'docs: generate READMEs'
+          git push
