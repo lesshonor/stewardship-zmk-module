@@ -1,6 +1,6 @@
 file_format: "1"
 id: gb34r2_nrf52833
-name: "GB34 r2 (nRF25833)"
+name: "GB34 r2 (nRF52833)"
 description: "The second round of GB34/#34, an 11u hotswap keyboard designed by Niuniu and Zorokb. Repository only contains BLE code for the wireless (nRF52833) PCB."
 type: board
 arch: arm
