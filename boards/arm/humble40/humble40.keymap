@@ -12,14 +12,14 @@
     combos {
         compatible = "zmk,combos";
 
-        cmd_studio {
+        combo_studio {
             bindings = <&studio_unlock>;
-            key-positions = <0 24 11 35>;
+            key-positions = <0 12>;
         };
 
-        cmd_boot {
+        combo_boot {
             bindings = <&bootloader>;
-            key-positions = <0 11 43 36>;
+            key-positions = <0 11>;
         };
     };
 

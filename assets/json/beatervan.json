@@ -1,4 +1,6 @@
 {
+  "id": "beatervan",
+  "name": "Beatervan",
   "layouts": {
     "arrows_southpaw_transform": {
       "name": "Arrows + Southpaw",
