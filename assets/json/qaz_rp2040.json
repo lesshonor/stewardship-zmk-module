@@ -1,8 +1,8 @@
 {
   "id": "qaz_rp2040",
-  "name": "QAZ",
+  "name": "QAZ (RP2040)",
   "layouts": {
-    "split_bar_layout": {
+    "split_bar_transform": {
       "name": "Split Bar",
       "layout": [
         { "row": 0, "col": 0, "x":    0, "y": 0 },
@@ -47,7 +47,7 @@
         { "row": 3, "col": 9, "x": 9.25, "y": 3 }
       ]
     },
-    "big_bar_layout": {
+    "big_bar_transform": {
       "name": "Big Bar",
       "layout": [
         { "row": 0, "col": 0,  "x":    0, "y": 0 },
@@ -89,7 +89,7 @@
         { "row": 3, "col": 9,  "x": 9.25, "y": 3 }
       ]
     },
-    "wkl_split_bar_layout": {
+    "wkl_split_bar_transform": {
       "name": "WKL Split Bar",
       "layout": [
         { "row": 0, "col": 0, "x":    0, "y": 0 },
@@ -132,7 +132,7 @@
         { "row": 3, "col": 9, "x": 9.25, "y": 3 }
       ]
     },
-    "wkl_big_bar_layout": {
+    "wkl_big_bar_transform": {
       "name": "WKL Big Bar",
       "layout": [
         { "row": 0, "col": 0, "x":    0, "y": 0 },
@@ -172,7 +172,7 @@
         { "row": 3, "col": 9, "x": 9.25, "y": 3 }
       ]
     },
-    "hhkb_split_bar_layout": {
+    "hhkb_split_bar_transform": {
       "name": "HHKB Split Bar",
       "layout": [
         { "row": 0, "col": 0, "x":    0, "y": 0 },
@@ -215,7 +215,7 @@
         { "row": 3, "col": 8, "x": 8.25, "y": 3 }
       ]
     },
-    "hhkb_big_bar_layout": {
+    "hhkb_big_bar_transform": {
       "name": "HHKB Big Bar",
       "layout": [
         { "row": 0, "col": 0, "x":    0, "y": 0 },

@@ -1,9 +1,10 @@
 file_format: "1"
 id: beatervan
 name: Beatervan
+description: A Pro Micro-based minivan with a "Plaid-style" forehead of decoratively-arranged diodes.
 type: shield
-url: https://p3dstore.com/collections/40-or-smaller-acrylic-cases/products/beatervan-pcb-acrylic-keyboard-case
-#url: https://github.com/ojthetiny/beatervan
 requires: [pro_micro]
 features:
   - keys
+  - studio
+url: https://github.com/ojthetiny/beatervan

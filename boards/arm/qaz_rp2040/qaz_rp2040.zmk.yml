@@ -6,8 +6,8 @@ type: board
 arch: arm
 outputs:
   - usb
-url: https://www.cbkbd.com/product/qaz
 features:
   - keys
-  - studio
   - underglow
+  - studio
+url: https://www.cbkbd.com/product/qaz
