@@ -1,0 +1,5 @@
+board:
+  name: gb34r2_nrf52833
+  vendor: niuniu
+  socs:
+    - name: nrf52833

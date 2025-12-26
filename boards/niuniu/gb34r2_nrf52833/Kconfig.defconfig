@@ -3,9 +3,6 @@
 
 if BOARD_GB34R2_NRF52833
 
-config BOARD
-    default "gb34r2_nrf52833"
-
 config ZMK_KEYBOARD_NAME
     default "GB34 r2"
 

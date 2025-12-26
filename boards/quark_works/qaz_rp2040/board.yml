@@ -1,0 +1,5 @@
+board:
+  name: qaz_rp2040
+  vendor: quark_works
+  socs:
+    - name: rp2040

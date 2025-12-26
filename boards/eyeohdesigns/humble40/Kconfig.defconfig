@@ -6,9 +6,6 @@ if BOARD_HUMBLE40
 config ZMK_KEYBOARD_NAME
     default "humble40"
 
-config BOARD
-    default "humble40"
-
 config RP2_FLASH_W25Q080
     default y
 

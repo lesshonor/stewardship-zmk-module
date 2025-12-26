@@ -1,7 +1,5 @@
 # Copyright (c) 2024 The ZMK Contributors
 # SPDX-License-Identifier: Apache-2.0
 
-config BOARD_QAZ_RP2040
-	bool "QAZ RP2040"
-	depends on SOC_RP2040
-
+config BOARD_HUMBLE40
+	select SOC_RP2040

@@ -6,9 +6,6 @@ if BOARD_QAZ_RP2040
 config ZMK_KEYBOARD_NAME
     default "QAZ RP2040"
 
-config BOARD
-    default "qaz_rp2040"
-
 config RP2_FLASH_W25Q080
     default y
 

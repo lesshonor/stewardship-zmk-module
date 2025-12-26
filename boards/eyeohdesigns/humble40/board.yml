@@ -1,0 +1,5 @@
+board:
+  name: humble40
+  vendor: eyeohdesigns
+  socs:
+    - name: rp2040
